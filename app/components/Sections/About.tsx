@@ -21,8 +21,8 @@ export const About = () => {
             aprendido muchísimo. Siempre estoy preparado para{" "}
             <span className="font-bold text-[#127357] text-xl">
               nuevos retos
-            </span>{" "}
-            y{" "}
+            </span>
+            y
             <span className="font-bold text-[#127357] text-xl">
               oportunidades
             </span>
