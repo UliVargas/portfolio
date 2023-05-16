@@ -1,9 +1,9 @@
 import type { V2_MetaFunction } from "@remix-run/node";
-import { About } from "~/components/About";
-import { Footer } from "~/components/Footer";
-import { Header } from "~/components/Header";
-import { Hero } from "~/components/Hero";
-import { Technologies } from "~/components/Technologies";
+import { About } from "~/components/Sections/About";
+import { Footer } from "~/components/Sections/Footer";
+import { Header } from "~/components/Sections/Header";
+import { Hero } from "~/components/Shared/Hero";
+import { Technologies } from "~/components/Sections/Technologies";
 
 export const meta: V2_MetaFunction = () => {
   return [{ title: "Ulises Vargas - Portafolio" }];

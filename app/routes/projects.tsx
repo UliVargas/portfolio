@@ -1,9 +1,14 @@
+import { Header } from "~/components/Sections/Header";
+
 const Projects = () => {
   return (
     <>
-      <h1>PROYECTOS</h1>
+      <Header />
+      <main>
+        <h1>PROYECTOS</h1>
+      </main>
     </>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;
