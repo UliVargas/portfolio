@@ -2,7 +2,7 @@ const classProps = "font-bold text-3xl text-[#127357]";
 
 export const About = () => {
   return (
-    <section className="h-[450px] flex items-center shadow-md">
+    <section className="h-[500px] flex items-center border">
       <div className="w-[1200px] h-[300px] mx-auto flex px-6">
         <div className="self-start w-[590px]">
           <blockquote className="text-xl font-light">

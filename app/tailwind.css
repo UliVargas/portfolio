@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  body {
+    font-family: "Lato", sans-serif;
+  }
+  main {
+    padding-top: 120px;
+  }
+}

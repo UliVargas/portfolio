@@ -1,9 +1,9 @@
-import { Avatar } from '../Avatar';
+import { Avatar } from './Avatar';
 
 export const Hero = () => {
   return (
     <section className="h-[600px] border border-spacing-y-4 bg-gray-100">
-      <div className="h-full mx-auto w-[1200px] flex items-center justify-center gap-8 mt-[50px]">
+      <div className="h-full mx-auto w-[1200px] flex items-center justify-center gap-8">
         <Avatar />
         <div>
           <h4 className="text-lg font-sans">Desarrollador Web Full-Stack</h4>
