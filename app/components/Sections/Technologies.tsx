@@ -1,15 +1,17 @@
-import { createElement, useRef, useState } from "react";
-import { technologies } from "~/utils";
-import { Button } from "../Shared/Button";
-import classNames from "classnames";
+import { createElement, useRef, useState } from 'react'
+import classNames from 'classnames'
+
+import { technologies } from '~/utils'
+
+import { Button } from '../Shared/Button'
 
 export const Technologies = () => {
-  const refDescription = useRef<HTMLQuoteElement>(null);
+  const refDescription = useRef<HTMLQuoteElement>(null)
   const initialDescription =
-    technologies.find((tech) => tech.title === "default")?.description ?? "";
+    technologies.find(tech => tech.title === 'default')?.description ?? ''
 
-  const [heading, setHeading] = useState<string>("");
-  const [description, setDescription] = useState<string>(initialDescription);
+  const [heading, setHeading] = useState<string | undefined>('')
+  const [description, setDescription] = useState<string>(initialDescription)
 
   return (
     <section className="bg-[#010B40] h-[500px] border">
@@ -24,28 +26,27 @@ export const Technologies = () => {
         <div className="w-full flex items-center">
           <div className="h-auto w-[500px] flex flex-wrap gap-4 items-center">
             {technologies.map(({ title, description, icon }, index) => {
-              const active = title === heading;
+              const active = title === heading
               const className = active
-                ? "bg-white text-[#127357]"
-                : "bg-[#127357] text-white";
+                ? 'bg-white text-[#127357]'
+                : 'bg-[#127357] text-white'
               return (
                 <>
-                  {title !== "default" && (
+                  {title !== 'default' && (
                     <Button
                       key={index}
                       type="button"
                       onClick={() => {
-                        const newValue: any =
-                          heading === title ? undefined : title;
-                        setHeading(newValue);
+                        const newValue = heading === title ? undefined : title
+                        setHeading(newValue)
                         !newValue
                           ? setDescription(initialDescription)
-                          : setDescription(description);
+                          : setDescription(description)
                       }}
                       className={classNames(
-                        "py-2 px-4 rounded text-md font-extralight",
+                        'py-2 px-4 rounded text-md font-extralight',
                         {
-                          [className]: className,
+                          [className]: className
                         }
                       )}
                       active={active}
@@ -53,18 +54,18 @@ export const Technologies = () => {
                       <div className="flex gap-1.5 items-center">
                         {icon &&
                           createElement(icon, {
-                            index,
+                            index
                           })}
                         {title}
                       </div>
                     </Button>
                   )}
                 </>
-              );
+              )
             })}
           </div>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}

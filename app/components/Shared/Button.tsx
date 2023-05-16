@@ -1,16 +1,9 @@
-import type { ButtonHTMLAttributes, FC } from "react";
+import type { ButtonHTMLAttributes, FC } from 'react'
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
-  active?: boolean;
+  active?: boolean
 }
 
-export const Button: FC<Props> = ({ children, active, ...rest }) => {
-  
-  return (
-    <button
-      {...rest}
-    >
-      {children}
-    </button>
-  );
-};
+export const Button: FC<Props> = ({ children, ...rest }) => {
+  return <button {...rest}>{children}</button>
+}

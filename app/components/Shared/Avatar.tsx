@@ -1,4 +1,4 @@
-import avatar from "public/retrato.jpg";
+import avatar from 'public/retrato.jpg'
 
 export const Avatar = () => {
   return (
@@ -9,5 +9,5 @@ export const Avatar = () => {
       width="auto"
       height="auto"
     />
-  );
-};
+  )
+}

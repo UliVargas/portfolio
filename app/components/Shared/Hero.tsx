@@ -1,4 +1,4 @@
-import { Avatar } from './Avatar';
+import { Avatar } from './Avatar'
 
 export const Hero = () => {
   return (
@@ -13,5 +13,5 @@ export const Hero = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
