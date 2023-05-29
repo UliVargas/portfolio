@@ -49,7 +49,7 @@ export const Navbar = () => {
                   <Link
                     href={url}
                     className={
-                      pathname.startsWith(url)
+                      pathname === url
                         ? 'text-[#127357] underline underline-offset-4'
                         : ''
                     }
