@@ -14,7 +14,6 @@ import {
   SiHtml5,
   SiCss3,
   SiMui,
-  SiAntdesign,
   SiStyledcomponents
 } from 'react-icons/si'
 import type { ElementType } from 'react'

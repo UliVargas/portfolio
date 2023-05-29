@@ -22,11 +22,11 @@ export const About = () => {
             desde que toqué mi primera linea de código, mas sin embargo he
             aprendido muchísimo. Siempre estoy preparado para{' '}
             <span className="font-bold text-[#127357] text-xl">
-              nuevos retos 
+              nuevos retos
             </span>
             y
             <span className="font-bold text-[#127357] md:text-xl">
-               oportunidades
+              oportunidades
             </span>
             ; Ya que día tras día busco mejorar para dar lo mejor de mí en cada
             proyecto en el que ayudo a crear.

@@ -1,20 +1,22 @@
-import { Header } from "./components/Sections/Header";
-import "./globals.css";
-import { Lato } from "next/font/google";
+import { Lato } from 'next/font/google'
 
-const lato = Lato({ 
-  weight: ['400', '700', '900'], 
-  subsets: ["latin"] 
+import { Header } from './components/Sections/Header'
+
+import './globals.css'
+
+const lato = Lato({
+  weight: ['400', '700', '900'],
+  subsets: ['latin']
 })
 
 export const metadata = {
-  title: "Ulises Vargas - Portafolio"
+  title: 'Ulises Vargas - Portafolio'
 }
 
 export default function RootLayout({
-  children,
+  children
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="es">
@@ -23,5 +25,5 @@ export default function RootLayout({
         <main>{children}</main>
       </body>
     </html>
-  );
+  )
 }

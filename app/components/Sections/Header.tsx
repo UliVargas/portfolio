@@ -1,17 +1,18 @@
-import Link from "next/link";
-import { Navbar } from "../Shared/Navbar";
+import Link from 'next/link'
+
+import { Navbar } from '../Shared/Navbar'
 
 export const Header = () => {
   return (
     <header className="fixed z-10 w-full bg-white h-[80px] md:h-[120px] border border-spacing-y-4">
-      <div className='flex flex-col md:flex-row items-center sm:mx-auto h-full justify-center md:justify-between px-10'>
+      <div className="flex flex-col md:flex-row items-center sm:mx-auto h-full justify-center md:justify-between px-10">
         <Link href="/">
           <h1 className="bg-gradient-to-l from-[#127357] from-0% to-[#010B40] to-100% bg-clip-text inline-block text-transparent text-4xl font-extrabold">
-            {"<U/V>"}
+            {'<U/V>'}
           </h1>
         </Link>
         <Navbar />
       </div>
     </header>
-  );
-};
+  )
+}
