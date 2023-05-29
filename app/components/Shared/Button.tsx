@@ -1,8 +1,6 @@
 import type { ButtonHTMLAttributes, FC } from 'react'
 
-interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
-  active?: boolean
-}
+type Props = ButtonHTMLAttributes<HTMLButtonElement>
 
 export const Button: FC<Props> = ({ children, ...rest }) => {
   return <button {...rest}>{children}</button>

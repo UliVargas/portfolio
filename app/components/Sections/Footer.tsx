@@ -1,17 +1,17 @@
 import { FaGithubSquare, FaLinkedin } from 'react-icons/fa'
-import { Link } from '@remix-run/react'
+import Link from 'next/link'
 
-import { SOCIAL_GITHUB, SOCIAL_LINKEDIN } from '~/utils'
+import { SOCIAL_GITHUB, SOCIAL_LINKEDIN } from '@/utils'
 
 export const Footer = () => {
   return (
-    <footer className="h-[150px] bg-gray-100 border pb-2">
-      <div className="h-full w-[600px] mx-auto flex flex-col justify-end items-center gap-4">
+    <footer className="h-[100px] md:h-[150px] bg-gray-100 border pb-2">
+      <div className="h-full md:max-w-[600px] mx-auto flex flex-col justify-end items-center gap-4">
         <div className="flex gap-2 items-center">
-          <Link to={SOCIAL_LINKEDIN} target="_blank">
+          <Link href={SOCIAL_LINKEDIN} target="_blank">
             <FaLinkedin size="30px" />
           </Link>
-          <Link to={SOCIAL_GITHUB} target="_blank">
+          <Link href={SOCIAL_GITHUB} target="_blank">
             <FaGithubSquare size="30px" />
           </Link>
         </div>
