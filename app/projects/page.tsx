@@ -10,6 +10,9 @@ const getRepos = async () => {
 
 const ProjectsPage = async () => {
   const data: Repo[] = await getRepos()
+
+  console.log(data)
+
   return (
     <>
       <h1>Página de proyectos</h1>
