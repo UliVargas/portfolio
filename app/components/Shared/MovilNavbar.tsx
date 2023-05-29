@@ -1,5 +1,3 @@
-'use client'
-
 import { GrMenu, GrClose } from 'react-icons/gr'
 import { FC } from 'react'
 import Link from 'next/link'
