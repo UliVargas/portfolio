@@ -1,5 +1,3 @@
-import axios from 'axios'
-
 import { Repo } from '@/models/repo'
 
 const getRepos = async () => {
