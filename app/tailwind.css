@@ -2,11 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-main {
-  padding-top: 80px;
-}
-
-@media (min-width: 768px) {
+@layer components {
+  body {
+    font-family: "Lato", sans-serif;
+  }
   main {
     padding-top: 120px;
   }

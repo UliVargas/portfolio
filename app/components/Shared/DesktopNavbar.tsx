@@ -1,5 +1,5 @@
-import Link from 'next/link'
 import classNames from 'classnames'
+import { Link } from '@remix-run/react'
 
 import { Route } from './Navbar'
 
@@ -26,7 +26,7 @@ export const DesktopNavbar = ({
                 key={url}
               >
                 <Link
-                  href={url}
+                  to={url}
                   className={
                     pathname === url
                       ? 'text-[#127357] underline underline-offset-4'

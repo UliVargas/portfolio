@@ -1,7 +1,5 @@
-'use client'
-
 import { useState } from 'react'
-import { usePathname } from 'next/navigation'
+import { useLocation } from '@remix-run/react'
 
 import { MovilNavbar } from './MovilNavbar'
 import { DesktopNavbar } from './DesktopNavbar'
@@ -23,7 +21,7 @@ const routes: Route[] = [
 ]
 
 export const Navbar = () => {
-  const pathname = usePathname()
+  const { pathname } = useLocation()
   const [isOpen, setIsOpen] = useState(false)
 
   const openAndCloseMenu = () => {

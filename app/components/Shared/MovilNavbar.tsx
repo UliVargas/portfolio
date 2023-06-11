@@ -1,7 +1,7 @@
 import { GrMenu, GrClose } from 'react-icons/gr'
 import { FC } from 'react'
-import Link from 'next/link'
 import classNames from 'classnames'
+import { Link } from '@remix-run/react'
 
 import { Route } from './Navbar'
 
@@ -52,7 +52,7 @@ export const MovilNavbar: FC<Props> = ({
                   key={url}
                 >
                   <Link
-                    href={url}
+                    to={url}
                     className={
                       pathname === url
                         ? 'text-[#127357] underline underline-offset-4'

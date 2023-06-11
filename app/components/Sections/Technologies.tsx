@@ -1,10 +1,9 @@
-'use client'
-
 import { Fragment, createElement, useRef, useState } from 'react'
 import classNames from 'classnames'
 
+import { technologies } from '~/utils/mocks/technologies'
+
 import { Button } from '../Shared/Button'
-import { technologies } from '../../utils'
 
 export const Technologies = () => {
   const refDescription = useRef<HTMLQuoteElement>(null)

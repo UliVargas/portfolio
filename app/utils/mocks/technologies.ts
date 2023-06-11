@@ -12,20 +12,15 @@ import {
   SiPrisma,
   SiRedux,
   SiHtml5,
-  SiCss3,
-  SiMui,
-  SiStyledcomponents
+  SiCss3
 } from 'react-icons/si'
-import type { ElementType } from 'react'
+import { ElementType } from 'react'
 
 interface Technologies {
   description: string
   title: string
   icon?: ElementType
 }
-
-export const SOCIAL_GITHUB = `https://github.com/UliVargas`
-export const SOCIAL_LINKEDIN = `https://www.linkedin.com/in/ulisesvaf`
 
 export const technologies: Technologies[] = [
   {
@@ -62,18 +57,6 @@ export const technologies: Technologies[] = [
     description:
       'TailwindCSS es un marco como ningún otro. En lugar de limitarlo a un diseño de escenario, le brinda las herramientas y la estandarización para construir exactamente lo que desea.',
     icon: SiTailwindcss
-  },
-  {
-    title: 'MaterialUI',
-    description:
-      'Material UI es una biblioteca de componentes de interfaz de usuario para React, diseñada para ayudar a los desarrolladores a construir aplicaciones web modernas, siguiendo los principios de Material Design, el sistema de diseño creado por Google.',
-    icon: SiMui
-  },
-  {
-    title: 'Styled  Components',
-    description:
-      'Styled Components es una biblioteca de javascript frecuentemente usada en React con la que puedes crear componentes de estilización personalizados, te permite escribir código CSS dentro de una función Javascript, en lugar de escribir CSS en un archivo separado.',
-    icon: SiStyledcomponents
   },
   {
     title: 'JavaScript',
