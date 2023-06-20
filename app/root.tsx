@@ -1,4 +1,3 @@
-import { useContext } from 'react'
 import {
   Links,
   LiveReload,
@@ -11,6 +10,9 @@ import type { LinksFunction } from '@remix-run/node'
 import { cssBundleHref } from '@remix-run/css-bundle'
 
 import stylesheet from '~/tailwind.css'
+
+import { Header } from './components/Sections/Header'
+import { Footer } from './components/Sections/Footer'
 
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: stylesheet },
@@ -27,17 +29,21 @@ export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : [])
 ]
 
-function App() {
+const App = () => {
   return (
-    <html lang="es" className="h-full" data-theme={'light'}>
+    <html lang="es" className="h-screen" data-theme={'light'}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <Meta />
         <Links />
       </head>
-      <body>
-        <Outlet />
+      <body className="flex flex-col justify-between h-full">
+        <Header />
+        <main className="w-full">
+          <Outlet />
+        </main>
+        <Footer />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
@@ -46,6 +52,4 @@ function App() {
   )
 }
 
-export default function AppWhithProviders() {
-  return <App />
-}
+export default App

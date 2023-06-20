@@ -5,7 +5,7 @@ import { SOCIAL_GITHUB, SOCIAL_LINKEDIN } from '../../utils/utils'
 
 export const Footer = () => {
   return (
-    <footer className="h-[100px] md:h-[150px] bg-gray-100 border pb-2">
+    <footer className="bg-gray-100 border p-6">
       <div className="h-full md:max-w-[600px] mx-auto flex flex-col justify-end items-center gap-4">
         <div className="flex gap-2 items-center">
           <Link to={SOCIAL_LINKEDIN} target="_blank">

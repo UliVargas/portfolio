@@ -3,8 +3,6 @@ import type { V2_MetaFunction } from '@remix-run/node'
 
 import { Technologies } from '~/components/Sections/Technologies'
 import { Hero } from '~/components/Sections/Hero'
-import { Header } from '~/components/Sections/Header'
-import { Footer } from '~/components/Sections/Footer'
 import { About } from '~/components/Sections/About'
 
 // eslint-disable-next-line camelcase
@@ -15,13 +13,9 @@ export const meta: V2_MetaFunction = () => {
 export default function Index() {
   return (
     <>
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Technologies />
-        <Footer />
-      </main>
+      <Hero />
+      <About />
+      <Technologies />
     </>
   )
 }

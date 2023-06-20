@@ -27,13 +27,20 @@ export const DesktopNavbar = ({
               >
                 <Link
                   to={url}
-                  className={
-                    pathname === url
-                      ? 'text-[#127357] underline underline-offset-4'
-                      : ''
-                  }
+                  className={classNames(
+                    'relative overflow-hidden inline-block group',
+                    {
+                      'border-b border-[#127357]': pathname === url
+                    }
+                  )}
                 >
-                  {label}
+                  <div
+                    className={classNames({
+                      'border-b border-[#127357] absolute top-0 left-0 right-0 bottom-0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center':
+                        pathname !== url
+                    })}
+                  ></div>
+                  <span>{label}</span>
                 </Link>
               </li>
             )

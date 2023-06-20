@@ -27,9 +27,6 @@ export const Technologies = () => {
           <div className="max-w-[500px] flex flex-wrap gap-4 justify-center lg:justify-normal mx-auto items-center">
             {technologies.map(({ title, description, icon }) => {
               const active = title === heading
-              const className = active
-                ? 'bg-white text-[#127357]'
-                : 'bg-[#127357] text-white'
               return (
                 <Fragment key={title}>
                   {title !== 'default' && (
@@ -43,9 +40,11 @@ export const Technologies = () => {
                           : setDescription(description)
                       }}
                       className={classNames(
-                        'py-1 px-2 md:py-2 md:px-4 rounded text-sm md:text-md font-extralight',
+                        'bg-[#127357] text-white py-2 px-3 md:py-3 md:px-4.5 rounded text-sm md:text-md',
                         {
-                          [className]: className
+                          'relative overflow-hidden inline-block group':
+                            !active,
+                          'border-b-4 border-white': active
                         }
                       )}
                     >
@@ -56,6 +55,12 @@ export const Technologies = () => {
                           })}
                         {title}
                       </div>
+                      <div
+                        className={classNames({
+                          'border-b-4 border-white absolute top-0 left-0 right-0 bottom-0 transform scale-x-0 lg:group-hover:scale-x-100 transition-transform duration-300 origin-center':
+                            !active
+                        })}
+                      ></div>
                     </Button>
                   )}
                 </Fragment>

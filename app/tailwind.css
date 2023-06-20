@@ -2,11 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer components {
   body {
     font-family: "Lato", sans-serif;
+    box-sizing: border-box;
   }
+  
   main {
-    padding-top: 120px;
+    padding-top: 80px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 1024px) {
+    main {
+      padding-top: 120px;
+    }
+  }
+  
+  html {
+    box-sizing: inherit;
   }
 }
