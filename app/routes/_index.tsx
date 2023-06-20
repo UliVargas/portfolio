@@ -7,7 +7,7 @@ import { About } from '~/components/Sections/About'
 
 // eslint-disable-next-line camelcase
 export const meta: V2_MetaFunction = () => {
-  return [{ title: 'Ulises Vargas - Portafolio' }]
+  return [{ title: 'Ulises Vargas - Sobre Mí' }]
 }
 
 export default function Index() {
