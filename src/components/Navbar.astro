@@ -1,31 +1,48 @@
 ---
-import NavbarItem from './NavbarItem.astro';
+import NavbarItem from "./NavbarItem.astro";
 
 const routes = [
   {
-    label: 'Inicio',
-    href: '/'
+    label: "Inicio",
+    href: "/",
   },
   {
-    label: 'Proyectos',
-    href: '#proyetos'
+    label: "Proyectos",
+    href: "#proyectos",
   },
   {
-    label: 'Experiencia',
-    href: '#experiencia'
+    label: "Experiencia",
+    href: "#experiencia",
   },
   {
-    label: 'Contacto',
-    href: '#contacto'
-  }
-]
+    label: "Contacto",
+    href: "#contacto",
+  },
+];
 ---
-<nav class="h-24 border flex items-center justify-center w-[80rem] mx-auto">
+
+<nav
+  id="navbar"
+  class="h-24 flex items-center justify-center w-[80rem] mx-auto bg-zinc-800 rounded-t-lg transition-all duration-300"
+>
   <ul class="flex gap-x-6">
-    {
-      routes.map((route) => (
-        <NavbarItem {...route} />
-      ))
-    }
+    {routes.map((route) => <NavbarItem {...route} />)}
   </ul>
 </nav>
+
+<script>
+  const nav = document.getElementById("navbar");
+  const navOffset = nav!.offsetTop;
+  
+  function handleScroll() {
+    if (window.scrollY >= navOffset) {
+      nav!.classList.add("fixed-nav");
+      document.body.style.paddingTop = `${nav!.clientHeight}px`;
+    } else {
+      nav!.classList.remove("fixed-nav");
+      document.body.style.paddingTop = "0";
+    }
+  }
+
+  window.addEventListener("scroll", handleScroll);
+</script>

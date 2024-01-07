@@ -1,13 +1,18 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import SectionContainer from "../components/SectionContainer.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Bienvenido a mi portafolio.">
-	<main>
-		
-	</main>
+  <main id="main-content" class="w-[80rem] mx-auto mt-5">
+    <SectionContainer id="proyectos" class="border h-[100rem]">
+      <h2
+        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
+      >
+        Proyectos
+      </h2>
+    </SectionContainer>
+  </main>
 </Layout>
 
-<style>
-	
-</style>
+<style></style>

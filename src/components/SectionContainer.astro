@@ -1,0 +1,64 @@
+---
+const { class: className, id } = Astro.props
+---
+
+<section
+  id={id}
+  data-section={id}
+  class={`section ${className} w-full mx-auto lg:w-[740px] pb-24`}
+>
+  <slot />
+</section>
+
+<script>
+  const section = document.querySelector('[data-section]');
+  let isLinkClicked = false;
+
+  function isSectionAtTop() {
+    const rect = section!.getBoundingClientRect();
+    return rect.top <= 0;
+  }
+
+  function handleScroll() {
+    if (isLinkClicked) {
+      // Si se ha hecho clic en el enlace de navegación
+      if (isSectionAtTop()) {
+        section!.classList.add("mt-32");
+      } else {
+        section!.classList.remove("mt-32");
+        isLinkClicked = false; // Reinicia el estado cuando ya no está en la parte superior
+      }
+    }
+  }
+
+  function handleClick(event: any) {
+    // Se ejecuta si se ha hecho clic en un enlace de navegación
+    const target = event.target;
+    if (target.tagName === 'A') {
+      event.preventDefault(); // Evita que el enlace redireccione inmediatamente
+      isLinkClicked = true;
+      const targetHref = target.getAttribute('href');
+      if (targetHref === '/') {
+        // Si el enlace es el de inicio (/), realiza un desplazamiento al top de la página
+        window.scrollTo({
+          top: 0,
+        });
+      } else {
+        // Si el enlace no es el de inicio, realiza el desplazamiento normal a la sección correspondiente
+        const targetSectionId = targetHref.substring(1); // Elimina el signo '#' del href
+        const targetSection = document.getElementById(targetSectionId);
+        if (targetSection) {
+          window.scrollTo({
+            top: targetSection.offsetTop - 100, // Margen del top al contenido
+          });
+        }
+      }
+    }
+  }
+
+  window.addEventListener('scroll', handleScroll);
+
+  // Esto revisa los eventos que se ejecutan en el selector del navbar para ejecutar el hanldeClick de más arriba
+  const navContainer = document.querySelector('#navbar');
+  navContainer!.addEventListener('click', handleClick);
+</script>
