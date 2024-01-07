@@ -8,22 +8,18 @@ const routes = [
   },
   {
     label: "Proyectos",
-    href: "#proyectos",
-  },
-  {
-    label: "Experiencia",
-    href: "#experiencia",
+    href: "/proyectos",
   },
   {
     label: "Contacto",
-    href: "#contacto",
+    href: "/contacto",
   },
 ];
 ---
 
 <nav
   id="navbar"
-  class="h-24 flex items-center justify-center w-[70rem] mx-auto bg-zinc-800 rounded-lg transition-all duration-300"
+  class="h-24 absolute left-0 right-0 flex items-center justify-center w-[70rem] mx-auto bg-zinc-800 rounded-t-lg transition-all duration-300"
 >
   <ul class="flex gap-x-6">
     {routes.map((route) => <NavbarItem {...route} />)}
@@ -37,10 +33,8 @@ const routes = [
   function handleScroll() {
     if (window.scrollY >= navOffset) {
       nav!.classList.add("fixed-nav");
-      document.body.style.paddingTop = `${nav!.clientHeight}px`;
     } else {
       nav!.classList.remove("fixed-nav");
-      document.body.style.paddingTop = "0";
     }
   }
 
