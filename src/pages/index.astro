@@ -1,32 +1,31 @@
 ---
-import SectionContainer from "../components/SectionContainer.astro";
+import Section from "../components/Section.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Bienvenido a mi portafolio.">
-  <main id="main-container" class="w-[80rem] mx-auto pt-20 rounded-lg">
-    <SectionContainer id="experiencia" class="h-[100rem] py-10">
+<Layout title="Portafolio - Ulises Vargas">
+  <main id="main-container" class="w-[70rem] mx-auto pt-20 rounded-lg">
+    <Section id="experiencia" class="h-[100rem] py-10">
       <h2
         class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
       >
         Experiencia
       </h2>
-    </SectionContainer>
-    <SectionContainer id="proyectos" class="h-[100rem]">
+    </Section>
+    <Section id="proyectos" class="h-[100rem]">
       <h2
         class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
       >
         Proyectos
       </h2>
-    </SectionContainer>
-    <SectionContainer id="contacto" class="h-[100rem]">
+    </Section>
+    <Section id="contacto" class="h-[100rem]">
       <h2
         class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
       >
         Contacto
       </h2>
-    </SectionContainer>
+    </Section>
   </main>
 </Layout>
 
-<style></style>
