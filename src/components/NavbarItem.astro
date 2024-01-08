@@ -8,5 +8,10 @@ const { href, label } = Astro.props;
 ---
 
 <li>
-  <a class={`px-6 py-4 rounded dark:text-white text-lg font-semibold hover:bg-zinc-700 hover:text-emerald-200`} href={href}>{label}</a>
+  <a
+    href={href}
+    class={`px-6 py-4 rounded dark:text-white text-lg font-semibold hover:bg-zinc-700 hover:text-emerald-200`}
+  >
+    {label}
+  </a>
 </li>
