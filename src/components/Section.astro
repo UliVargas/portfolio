@@ -1,5 +1,5 @@
 ---
-const { class: className, id } = Astro.props
+const { class: className, id } = Astro.props;
 ---
 
 <section
@@ -11,16 +11,15 @@ const { class: className, id } = Astro.props
 </section>
 
 <script>
-
   function handleClick(event: any) {
     // Se ejecuta si se ha hecho clic en un enlace de navegación
     const target = event.target;
-    if (target.tagName === 'A') {
+    if (target.tagName === "A") {
       event.preventDefault(); // Evita que el enlace redireccione inmediatamente
-      const targetHref = target.getAttribute('href');
-      if (targetHref === '/') {
+      const targetHref = target.getAttribute("href");
+      if (targetHref === "/") {
         // Si el enlace es el de inicio (/), realiza un desplazamiento al top de la página
-        document.title = 'Portafolio - Ulises Vargas'
+        document.title = "Portafolio - Ulises Vargas";
         window.scrollTo({
           top: 0,
         });
@@ -28,7 +27,9 @@ const { class: className, id } = Astro.props
         // Si el enlace no es el de inicio, realiza el desplazamiento normal a la sección correspondiente
         const targetSectionId: string = targetHref.substring(1); // Elimina el signo '#' del href
         const targetSection = document.getElementById(targetSectionId);
-        document.title = `Portafolio - ${targetSectionId.charAt(0).toUpperCase()}${targetSectionId.slice(1)}`
+        document.title = `Portafolio - ${targetSectionId
+          .charAt(0)
+          .toUpperCase()}${targetSectionId.slice(1)}`;
         if (targetSection) {
           window.scrollTo({
             top: targetSection.offsetTop - 100, // Margen del top al contenido
@@ -39,6 +40,6 @@ const { class: className, id } = Astro.props
   }
 
   // Esto revisa los eventos que se ejecutan en el selector del navbar para ejecutar el hanldeClick de más arriba
-  const navContainer = document.querySelector('#navbar');
-  navContainer!.addEventListener('click', handleClick);
+  const navContainer = document.querySelector("#navbar");
+  navContainer!.addEventListener("click", handleClick);
 </script>
