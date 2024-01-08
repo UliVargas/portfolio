@@ -15,7 +15,6 @@ const { class: className, id } = Astro.props
   function handleClick(event: any) {
     // Se ejecuta si se ha hecho clic en un enlace de navegación
     const target = event.target;
-    console.log({ target });
     if (target.tagName === 'A') {
       event.preventDefault(); // Evita que el enlace redireccione inmediatamente
       const targetHref = target.getAttribute('href');
