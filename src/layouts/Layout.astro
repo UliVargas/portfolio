@@ -19,25 +19,25 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
-    <Header />
-    <Navbar />
-    <slot />
+  <body data-mode="dark" class="bg-zinc-100">
+    <div class="dark:bg-[#1C1B22]">
+      <Header />
+      <Navbar />
+      <slot />
+    </div>
   </body>
 </html>
 <style is:global>
-  :root {
-    color-scheme: dark;
-  }
   html {
     scroll-behavior: smooth;
-    background-image: linear-gradient(-20deg, #4e4376 0%, #2b5876 100%);
   }
   body {
     overscroll-behavior: none;
     font-family: "Onest Variable", sans-serif;
-    background-color: transparent;
-    background-image: url("/circuit-board.svg");
+  }
+
+  #navbar {
+    transition: all 0.3s ease;
   }
 
   #navbar.fixed-nav {
@@ -47,13 +47,9 @@ const { title } = Astro.props;
     left: 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 10000;
-  }
-  #navbar.fixed-nav {
-    height: 70px;
+    transition: all 0.3s ease;
+    height: 5rem;
     background-color: rgb(39, 39, 42);
-  }
-  #main-container {
-    background-color: rgb(22, 22, 24);
   }
   @media (prefers-reduced-motion: reduce) {
     html {

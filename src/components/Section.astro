@@ -32,7 +32,7 @@ const { class: className, id } = Astro.props;
           .toUpperCase()}${targetSectionId.slice(1)}`;
         if (targetSection) {
           window.scrollTo({
-            top: targetSection.offsetTop - 100, // Margen del top al contenido
+            top: targetSection.offsetTop - 80, // Margen del top al contenido
           });
         }
       }
