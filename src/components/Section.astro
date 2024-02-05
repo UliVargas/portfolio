@@ -1,44 +1,27 @@
 ---
-const { class: className, id } = Astro.props;
+interface Props {
+  id: string;
+  title: string;
+  class: string;
+}
+const { class: className, id, title } = Astro.props;
 ---
 
 <section
   id={id}
   data-section={id}
-  class={`${className} w-full mx-auto lg:w-[80rem] px-20`}
+  class={`${className} mx-auto lg:w-[80rem] px-20 w-[90%]`}
 >
+  <h2
+    class="text-3xl font-semibold mb-6 flex gap-x-3 justify-center md:justify-start items-center"
+  >
+    {title}
+  </h2>
   <slot />
 </section>
 
 <script>
-  function handleClick(event: any) {
-    // Se ejecuta si se ha hecho clic en un enlace de navegación
-    const target = event.target;
-    if (target.tagName === "A") {
-      event.preventDefault(); // Evita que el enlace redireccione inmediatamente
-      const targetHref = target.getAttribute("href");
-      if (targetHref === "/") {
-        // Si el enlace es el de inicio (/), realiza un desplazamiento al top de la página
-        document.title = "Portafolio - Ulises Vargas";
-        window.scrollTo({
-          top: 0,
-        });
-      } else {
-        // Si el enlace no es el de inicio, realiza el desplazamiento normal a la sección correspondiente
-        const targetSectionId: string = targetHref.substring(1); // Elimina el signo '#' del href
-        const targetSection = document.getElementById(targetSectionId);
-        document.title = `Portafolio - ${targetSectionId
-          .charAt(0)
-          .toUpperCase()}${targetSectionId.slice(1)}`;
-        if (targetSection) {
-          window.scrollTo({
-            top: targetSection.offsetTop - 80, // Margen del top al contenido
-          });
-        }
-      }
-    }
-  }
-
+  import { handleClick } from "../scripts/section";
   // Esto revisa los eventos que se ejecutan en el selector del navbar para ejecutar el hanldeClick de más arriba
   const navContainer = document.querySelector("#navbar");
   navContainer!.addEventListener("click", handleClick);

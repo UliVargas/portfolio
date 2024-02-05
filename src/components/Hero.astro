@@ -1,0 +1,41 @@
+---
+import Badge from "./Badge.astro";
+---
+
+<header class="h-[30rem] w-[90%] lg:max-w-7xl mx-auto text-center md:text-start" id="header">
+  <div class="grid place-content-center h-full gap-2">
+    <div>
+      <img
+        src="/retrato.webp"
+        alt="Foto Ulises Vargas"
+        class="rounded-full mb-4 size-36 mx-auto md:mx-0"
+      />
+      <h1
+        class="text-gray-800 dark:text-white text-3xl relative md:text-4xl lg:text-5xl font-bold gap-x-4 pb-6"
+      >
+        Hola, soy Ulises <a
+          href="https://linkedin.com/in/ulisesvaf"
+          target="_blank"
+          rel="noopener"
+          class="flex justify-center items-center absolute right-[105px] md:right-20 -top-8 md:-top-10"
+        >
+          <Badge>Disponible para trabajar</Badge>
+        </a>
+      </h1>
+    </div>
+    <h2
+      class="text-xl lg:w-[35rem] lg:text-2xl text-balance light:text-black dark:text-white"
+    >
+      <span class="text-gray-800 dark:text-white">+2 años de experiencia.</span>
+      <span class="dark:text-emerald-400 text-emerald-600">
+        Desarrollador Web Full Stack</span
+      >
+      .<span class="dark:text-red-400 text-red-600">
+        Apasionado por la tecnología</span
+      >.
+      <span class="dark:text-sky-400 text-sky-600"
+        >Especializado en crear aplicaciones únicas.</span
+      >
+    </h2>
+  </div>
+</header>

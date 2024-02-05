@@ -1,6 +1,6 @@
 ---
 import "@fontsource-variable/onest";
-import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
 import Navbar from "../components/Navbar.astro";
 interface Props {
   title: string;
@@ -21,7 +21,7 @@ const { title } = Astro.props;
   </head>
   <body data-mode="dark" class="bg-zinc-100">
     <div class="dark:bg-[#1C1B22]">
-      <Header />
+      <Hero />
       <Navbar />
       <slot />
     </div>

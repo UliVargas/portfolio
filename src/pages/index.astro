@@ -4,27 +4,9 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Portafolio - Ulises Vargas">
-  <main class="bg-neutral-900/90 max-w-7xl mx-auto pt-20 rounded-lg text-white">
-    <Section id="experiencia" class="h-[100rem] py-10">
-      <h2
-        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center"
-      >
-        Experiencia
-      </h2>
-    </Section>
-    <Section id="proyectos" class="h-[100rem] py-10">
-      <h2
-        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center"
-      >
-        Proyectos
-      </h2>
-    </Section>
-    <Section id="contacto" class="h-[100rem] py-10">
-      <h2
-        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center"
-      >
-        Contacto
-      </h2>
-    </Section>
+  <main class="bg-neutral-900/90 w-[90%] lg:max-w-7xl justify-center mx-auto pt-10 md:pt-20 rounded-lg text-white">
+    <Section id="experiencia" class="h-[100rem] md:py-10" title='Experiencia' />
+    <Section id="proyectos" class="h-[100rem] md:py-10" title='Proyectos'/>
+    <Section id="contacto" class="h-[100rem] md:py-10" title='Contacto' />
   </main>
 </Layout>

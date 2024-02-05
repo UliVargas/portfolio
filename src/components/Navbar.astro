@@ -23,7 +23,7 @@ const routes = [
 
 <nav
   id="navbar"
-  class="h-[6.5rem] absolute left-0 right-0 flex items-center justify-center max-w-7xl mx-auto bg-zinc-800 rounded-t-lg transition-all duration-300"
+  class="h-[6.5rem] absolute left-0 right-0 lg:flex items-center justify-center lg:max-w-7xl mx-auto bg-zinc-800 rounded-t-lg transition-all duration-300 hidden"
 >
   <ul class="flex gap-x-6">
     {routes.map((route) => <NavbarItem {...route} />)}
@@ -31,22 +31,6 @@ const routes = [
 </nav>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    window.scrollTo(0, 0); // Asegura que la página comience en el top al cargar
-
-    const nav = document.getElementById("navbar");
-    if (!nav) return; // Si no se encuentra la barra, no ejecuta el código
-    const navOffset = nav.offsetTop;
-
-    function handleScroll() {
-      if (window.scrollY >= navOffset) {
-        nav!.classList.add("fixed-nav");
-      } else {
-        nav!.classList.remove("fixed-nav");
-      }
-    }
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Aplica la lógica de desplazamiento inmediatamente al cargar
-  });
+  import { fixedNavbar } from '../scripts/navbar'
+  document.addEventListener("DOMContentLoaded", fixedNavbar)
 </script>
