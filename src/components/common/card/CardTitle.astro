@@ -1,0 +1,17 @@
+---
+import { cn } from "../../../utils";
+
+interface Props extends astroHTML.JSX.HTMLAttributes {}
+
+const { class: className, ...props } = Astro.props;
+---
+
+<h3
+  class={cn(
+    "text-2xl font-semibold leading-none tracking-tight",
+    className
+  )}
+  {...props}
+>
+  <slot />
+</h3>

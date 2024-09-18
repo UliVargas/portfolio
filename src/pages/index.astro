@@ -1,12 +1,18 @@
 ---
-import Section from "../components/Section.astro";
-import Layout from "../layouts/Layout.astro";
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/common/Header.astro';
+import About from '../components/home/About.astro';
+import Projects from '../components/home/Projects.astro';
+import Contact from '../components/home/Contact.astro';
+import Footer from '../components/common/Footer.astro';
 ---
 
-<Layout title="Portafolio - Ulises Vargas">
-  <main class="bg-neutral-900/90 w-[90%] lg:max-w-7xl justify-center mx-auto pt-10 md:pt-20 rounded-lg text-white">
-    <Section id="experiencia" class="h-[100rem] md:py-10" title='Experiencia' />
-    <Section id="proyectos" class="h-[100rem] md:py-10" title='Proyectos'/>
-    <Section id="contacto" class="h-[100rem] md:py-10" title='Contacto' />
+<Layout title="Ulises Vargas - Desarrollador Full Stack">
+  <Header />
+  <main class="max-w-[1100px] mx-auto px-4 py-16 pt-28">
+    <About />
+    <Projects />
+    <Contact />
   </main>
+  <Footer />
 </Layout>

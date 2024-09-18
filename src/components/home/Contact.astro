@@ -1,0 +1,22 @@
+---
+import Button from "../common/Button.astro";
+import { Github, Linkedin, Mail } from "lucide-astro";
+---
+
+<section id="contact" class="text-center">
+  <h2 class="text-3xl font-bold mb-8">Contacto</h2>
+  <div class="flex justify-center space-x-4">
+    <Button variant="outline" class="bg-white/60 dark:bg-gray-800/60 hover:bg-green-100 dark:hover:bg-green-800/60 text-gray-800 dark:text-gray-200">
+      <Github class="mr-2 h-4 w-4" />
+      GitHub
+    </Button>
+    <Button variant="outline" class="bg-white/60 dark:bg-gray-800/60 hover:bg-green-100 dark:hover:bg-green-800/60 text-gray-800 dark:text-gray-200">
+      <Linkedin class="mr-2 h-4 w-4" />
+      LinkedIn
+    </Button>
+    <Button variant="outline" class="bg-white/60 dark:bg-gray-800/60 hover:bg-green-100 dark:hover:bg-green-800/60 text-gray-800 dark:text-gray-200">
+      <Mail class="mr-2 h-4 w-4" />
+      Email
+    </Button>
+  </div>
+</section>

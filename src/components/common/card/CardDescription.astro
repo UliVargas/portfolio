@@ -1,0 +1,14 @@
+---
+import { cn } from "../../../utils";
+
+interface Props extends astroHTML.JSX.HTMLAttributes {}
+
+const { class: className, ...props } = Astro.props;
+---
+
+<p
+  class={cn("text-sm text-muted-foreground", className)}
+  {...props}
+>
+  <slot />
+</p>

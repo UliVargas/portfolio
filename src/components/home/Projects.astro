@@ -1,0 +1,39 @@
+---
+import ProjectCard from './ProjectCard.astro';
+
+const projects = [
+  {
+    title: "E-commerce Backend",
+    description: "API RESTful con Node.js y Express, integrada con MongoDB para gestión de productos y pedidos.",
+    image: "/placeholder.svg?height=200&width=400",
+    tags: ["Node.js", "Express", "MongoDB", "JWT"]
+  },
+  {
+    title: "Dashboard de Análisis",
+    description: "Aplicación web de análisis en tiempo real construida con React y D3.js, con backend en Python.",
+    image: "/placeholder.svg?height=200&width=400",
+    tags: ["React", "D3.js", "Python", "WebSocket"]
+  },
+  {
+    title: "App de Gestión de Tareas",
+    description: "Aplicación full-stack con autenticación, notificaciones en tiempo real y sincronización offline.",
+    image: "/placeholder.svg?height=200&width=400",
+    tags: ["React Native", "Firebase", "Redux"]
+  },
+  {
+    title: "Microservicios de Logística",
+    description: "Sistema de microservicios para gestión de logística y envíos, desarrollado con Node.js y desplegado en AWS.",
+    image: "/placeholder.svg?height=200&width=400",
+    tags: ["Node.js", "Docker", "AWS", "Kubernetes"]
+  }
+];
+---
+
+<section id="projects" class="mb-16">
+  <h2 class="text-3xl font-bold mb-8 text-center">Proyectos Destacados</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    {projects.map((project) => (
+      <ProjectCard {...project} />
+    ))}
+  </div>
+</section>

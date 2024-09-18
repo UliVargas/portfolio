@@ -1,0 +1,41 @@
+---
+import Card from "../common/card/Card.astro";
+import CardContent from "../common/card/CardContent.astro";
+import CardDescription from "../common/card/CardDescription.astro";
+import CardHeader from "../common/card/CardHeader.astro";
+import CardTitle from "../common/card/CardTitle.astro";
+import CardFooter from "../common/card/CardFooter.astro";
+import Badge from "../common/Badge.astro";
+import { ExternalLink } from "lucide-astro";
+
+interface Props {
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+}
+
+const { title, description, image, tags } = Astro.props;
+---
+
+<Card class="overflow-hidden hover:shadow-lg transition-shadow duration-300 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border border-white/20 dark:border-gray-700/30">
+  <img src={image} alt={title} class="w-full h-48 object-cover" />
+  <CardHeader>
+    <CardTitle class="flex justify-between items-center text-gray-800 dark:text-gray-100">
+      {title}
+      <ExternalLink class="h-5 w-5 text-orange-500 dark:text-orange-400" />
+    </CardTitle>
+  </CardHeader>
+  <CardContent>
+    <CardDescription class="text-gray-600 dark:text-gray-300">{description}</CardDescription>
+  </CardContent>
+  <CardFooter>
+    <div class="flex flex-wrap gap-2">
+      {tags.map((tag) => (
+        <Badge variant="outline" class="bg-orange-100 dark:bg-orange-900/60 text-orange-800 dark:text-orange-100 border-orange-200 dark:border-orange-700/50">
+          {tag}
+        </Badge>
+      ))}
+    </div>
+  </CardFooter>
+</Card>

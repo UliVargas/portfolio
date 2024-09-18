@@ -1,0 +1,31 @@
+---
+import Badge from '../common/Badge.astro';
+
+const skills = ["JavaScript", "TypeScript", "React", "NextJS", "Astro", "Node.js", "Express", "MongoDB", "SQL", "Git", "Docker"];
+---
+
+<section id="about" class="mb-16">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+    <div class="col-span-2">
+      <h2 class="text-4xl font-bold mb-4">Desarrollador Full Stack</h2>
+      <p class="text-xl mb-6 dark:text-gray-300">
+        Con 3 años de experiencia en el desarrollo de aplicaciones web y móviles robustas y escalables.
+        Especializado en JavaScript y sus ecosistemas, con un fuerte enfoque en React y Node.js.
+      </p>
+      <div class="flex flex-wrap gap-2">
+        {skills.map((skill) => (
+          <Badge variant="secondary" class="text-sm py-1 px-2 bg-green-100 dark:bg-green-800 text-green-800 dark:text-green-100">
+            {skill}
+          </Badge>
+        ))}
+      </div>
+    </div>
+    <div class="col-span-1">
+      <img 
+        src="/retrato.webp"
+        alt="Ulises Vargas" 
+        class="w-full h-auto rounded-full border-4 border-green-200 dark:border-green-600"
+      />
+    </div>
+  </div>
+</section>
