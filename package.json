@@ -13,8 +13,10 @@
 		"format": "prettier --write \"**/*.{js,ts,astro,json,css}\""
 	},
 	"dependencies": {
+		"@iconify-json/material-symbols": "^1.2.55",
 		"@tailwindcss/vite": "^4.1.18",
 		"astro": "^5.17.1",
+		"astro-icon": "^1.1.5",
 		"tailwindcss": "^4.1.18"
 	},
 	"devDependencies": {

@@ -1,5 +1,6 @@
 ---
 // Hero section con elementos flotantes y terminal
+import { Icon } from 'astro-icon/components';
 ---
 
 <section
@@ -71,13 +72,13 @@
 		<div class="flex flex-col sm:flex-row gap-4 pt-4">
 			<a
 				href="#contact"
-				class="bg-primary hover:bg-primary-hover text-white font-bold text-lg py-3 px-8 rounded-xl border-2 border-black dark:border-white shadow-neobrutalism hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-neobrutalism-hover transition-all text-center z-20"
+				class="bg-primary md:hover:bg-primary-hover text-white font-bold text-lg py-3 px-8 rounded-xl border-2 border-black dark:border-white shadow-neobrutalism md:hover:translate-x-0.5 md:hover:translate-y-0.5 md:hover:shadow-neobrutalism-hover transition-all text-center z-20"
 			>
 				Contáctame
 			</a>
 			<a
 				href="#projects"
-				class="bg-white dark:bg-surface-dark text-black dark:text-white font-bold text-lg py-3 px-8 rounded-xl border-2 border-black dark:border-white shadow-neobrutalism hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-neobrutalism-hover transition-all text-center z-20"
+				class="bg-white dark:bg-surface-dark text-black dark:text-white font-bold text-lg py-3 px-8 rounded-xl border-2 border-black dark:border-white shadow-neobrutalism md:hover:translate-x-0.5 md:hover:translate-y-0.5 md:hover:shadow-neobrutalism-hover transition-all text-center z-20"
 			>
 				Ver Proyectos
 			</a>
@@ -134,7 +135,7 @@
 		<div
 			class="float-2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white w-24 h-24 md:w-28 md:h-28 flex items-center justify-center rounded-2xl border-2 border-black shadow-neobrutalism z-30 rotate-3"
 		>
-			<span class="material-symbols-outlined text-primary text-4xl md:text-5xl">layers</span>
+			<Icon name="material-symbols:layers" class="text-primary w-10 h-10 md:w-12 md:h-12" />
 		</div>
 	</div>
 
@@ -145,16 +146,16 @@
 			target="_blank"
 			rel="noopener noreferrer"
 			aria-label="Visitar perfil de GitHub"
-			class="w-12 h-12 bg-white rounded-full border-2 border-black flex items-center justify-center hover:scale-110 transition-transform shadow-sm group"
+			class="w-12 h-12 bg-white rounded-full border-2 border-black flex items-center justify-center md:hover:scale-110 transition-transform shadow-sm group"
 		>
-			<span class="font-bold text-primary group-hover:text-black">GH</span>
+			<span class="font-bold text-primary md:group-hover:text-black">GH</span>
 		</a>
 		<a
 			href="https://linkedin.com/in/ulivargas"
 			target="_blank"
 			rel="noopener noreferrer"
 			aria-label="Visitar perfil de LinkedIn"
-			class="w-12 h-12 bg-primary rounded-full border-2 border-black flex items-center justify-center hover:scale-110 transition-transform shadow-sm group"
+			class="w-12 h-12 bg-primary rounded-full border-2 border-black flex items-center justify-center md:hover:scale-110 transition-transform shadow-sm group"
 		>
 			<span class="font-bold text-white">LI</span>
 		</a>
@@ -163,7 +164,7 @@
 			target="_blank"
 			rel="noopener noreferrer"
 			aria-label="Visitar perfil de X (Twitter)"
-			class="w-12 h-12 bg-accent-grey rounded-full border-2 border-black flex items-center justify-center hover:scale-110 transition-transform shadow-sm group"
+			class="w-12 h-12 bg-accent-grey rounded-full border-2 border-black flex items-center justify-center md:hover:scale-110 transition-transform shadow-sm group"
 		>
 			<span class="font-bold text-white">X</span>
 		</a>

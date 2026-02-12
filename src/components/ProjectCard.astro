@@ -1,5 +1,7 @@
 ---
 // ProjectCard component
+import { Icon } from 'astro-icon/components';
+
 interface Props {
 	title: string;
 	description: string;
@@ -22,7 +24,7 @@ const {
 ---
 
 <div
-	class={`group relative flex flex-col ${reversed ? 'md:flex-row-reverse' : 'md:flex-row'} bg-white dark:bg-surface-dark border-4 border-black dark:border-white rounded-3xl shadow-neobrutalism hover:shadow-neobrutalism-hover transition-all duration-300 overflow-hidden transform ${reversed ? 'md:translate-x-8' : 'md:-translate-x-8'}`}
+	class={`group relative flex flex-col ${reversed ? 'md:flex-row-reverse' : 'md:flex-row'} bg-white dark:bg-surface-dark border-4 border-black dark:border-white rounded-3xl shadow-neobrutalism md:hover:shadow-neobrutalism-hover transition-all duration-300 overflow-hidden transform ${reversed ? 'md:translate-x-8' : 'md:-translate-x-8'}`}
 >
 	<!-- Category Badge -->
 	<div class={`absolute top-0 ${reversed ? 'md:left-0 lg:left-0' : 'right-0'} p-4 z-20`}>
@@ -46,7 +48,7 @@ const {
 		<div class="w-full max-w-sm relative z-10 perspective-1000">
 			<!-- Browser Mockup -->
 			<div
-				class="browser-mockup relative bg-white dark:bg-gray-900 border-2 border-black dark:border-white rounded-xl shadow-neobrutalism overflow-hidden transform hover:rotate-0 transition-transform duration-500"
+				class="browser-mockup relative bg-white dark:bg-gray-900 border-2 border-black dark:border-white rounded-xl shadow-neobrutalism overflow-hidden transform md:hover:rotate-0 transition-transform duration-500"
 			>
 				<!-- Browser Header -->
 				<div
@@ -73,14 +75,13 @@ const {
 
 				<!-- Browser Content -->
 				<div
-					class="aspect-video bg-gray-50 dark:bg-gray-800 relative flex items-center justify-center group-hover:scale-105 transition-transform duration-500"
+					class="aspect-video bg-gray-50 dark:bg-gray-800 relative flex items-center justify-center md:group-hover:scale-105 transition-transform duration-500"
 				>
 					<div class="text-center p-4">
-						<span
-							class="material-symbols-outlined text-6xl text-primary/20 dark:text-primary/40 mb-2"
-						>
-							web
-						</span>
+						<Icon
+							name="material-symbols:web"
+							class="text-primary/20 dark:text-primary/40 mb-2 w-16 h-16"
+						/>
 						<p class="font-mono text-xs text-primary/60 dark:text-primary/80 font-bold uppercase">
 							Vista Previa del Proyecto
 						</p>
@@ -108,14 +109,14 @@ const {
 				<h4
 					class="font-mono text-xs uppercase text-gray-500 mb-3 tracking-widest font-bold flex items-center gap-2"
 				>
-					<span class="material-symbols-outlined text-sm">settings_suggest</span>
+					<Icon name="material-symbols:settings-suggest" class="w-4 h-4" />
 					Stack Técnico
 				</h4>
 				<div class="flex flex-wrap gap-3">
 					{
 						technologies.map((tech) => (
-							<div class="flex items-center gap-2 bg-white dark:bg-gray-700 px-3 py-1.5 rounded-lg border-2 border-black dark:border-gray-500 text-sm font-bold shadow-sm hover:-translate-y-1 transition-transform">
-								<span class={`material-symbols-outlined text-base ${tech.color}`}>{tech.icon}</span>
+							<div class="flex items-center gap-2 bg-white dark:bg-gray-700 px-3 py-1.5 rounded-lg border-2 border-black dark:border-gray-500 text-sm font-bold shadow-sm md:hover:-translate-y-1 transition-transform">
+								<Icon name={`material-symbols:${tech.icon}`} class={`w-4 h-4 ${tech.color}`} />
 								{tech.name}
 							</div>
 						))
@@ -128,17 +129,17 @@ const {
 		<div class="flex gap-4 mt-auto">
 			<a
 				href="#contact"
-				class="inline-flex items-center gap-2 bg-black dark:bg-white text-white dark:text-black font-bold py-3 px-6 rounded-xl border-2 border-transparent hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors shadow-neobrutalism hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5"
+				class="inline-flex items-center gap-2 bg-black dark:bg-white text-white dark:text-black font-bold py-3 px-6 rounded-xl border-2 border-transparent md:hover:bg-gray-800 dark:md:hover:bg-gray-200 transition-colors shadow-neobrutalism md:hover:shadow-none md:hover:translate-x-0.5 md:hover:translate-y-0.5"
 			>
 				Más información
-				<span class="material-symbols-outlined text-sm">arrow_forward</span>
+				<Icon name="material-symbols:arrow-forward" class="w-4 h-4" />
 			</a>
 			<a
 				href="https://github.com/ulivargas"
 				target="_blank"
 				rel="noopener noreferrer"
 				aria-label="Ver en GitHub"
-				class="p-3 border-2 border-black dark:border-white rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors shadow-neobrutalism hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5"
+				class="p-3 border-2 border-black dark:border-white rounded-xl md:hover:bg-gray-100 dark:md:hover:bg-gray-800 transition-colors shadow-neobrutalism md:hover:shadow-none md:hover:translate-x-0.5 md:hover:translate-y-0.5"
 			>
 				<span class="font-bold font-mono">GH</span>
 			</a>
@@ -150,7 +151,9 @@ const {
 	.browser-mockup {
 		transition: transform 0.3s ease;
 	}
-	.browser-mockup:hover {
-		transform: translateY(-5px) rotate(1deg);
+	@media (min-width: 768px) {
+		.browser-mockup:hover {
+			transform: translateY(-5px) rotate(1deg);
+		}
 	}
 </style>

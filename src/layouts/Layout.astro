@@ -13,11 +13,41 @@ import '../styles/global.css';
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" style="visibility: hidden; opacity: 0;">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		
+		<!-- Prevent FOUC - Initialize theme before any render -->
+		<script is:inline>
+			(function() {
+				try {
+					const savedTheme = localStorage.getItem('theme');
+					const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+					const isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+					if (isDark) {
+						document.documentElement.classList.add('dark');
+					}
+				} catch (e) {}
+				// Show page once theme is set
+				document.documentElement.style.visibility = 'visible';
+				document.documentElement.style.opacity = '1';
+			})();
+		</script>
+		
+		<!-- Critical CSS for font fallback -->
+		<style is:inline>
+			/* System font fallback to prevent layout shift */
+			body {
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+			}
+			/* Smooth transition when custom fonts load */
+			.fonts-loaded body {
+				font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+			}
+		</style>
+		
 		<meta name="generator" content={Astro.generator} />
 
 		<!-- SEO Meta Tags -->
@@ -46,19 +76,30 @@ import '../styles/global.css';
 
 		<title>{title}</title>
 
-		<!-- Google Fonts -->
+		<!-- Preconnect to external domains -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		
+		<!-- Preload critical fonts -->
+		<link
+			rel="preload"
+			as="style"
+			href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Work+Sans:wght@400;600;800&display=swap"
+		/>
+		
+		<!-- Google Fonts with optimized display -->
 		<link
 			href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Work+Sans:wght@400;600;800&display=swap"
 			rel="stylesheet"
+			media="print"
+			onload="this.media='all'"
 		/>
-
-		<!-- Material Symbols -->
-		<link
-			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400&display=block"
-			rel="stylesheet"
-		/>
+		<noscript>
+			<link
+				href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Work+Sans:wght@400;600;800&display=swap"
+				rel="stylesheet"
+			/>
+		</noscript>
 	</head>
 	<body
 		class="bg-background-light dark:bg-background-dark text-black dark:text-white font-body transition-colors duration-300 min-h-screen flex flex-col items-center p-2 sm:p-4 lg:p-8"
@@ -84,5 +125,19 @@ import '../styles/global.css';
 
 			<slot />
 		</div>
+		
+		<!-- Font loading detection -->
+		<script is:inline>
+			if (document.fonts && document.fonts.ready) {
+				document.fonts.ready.then(() => {
+					document.documentElement.classList.add('fonts-loaded');
+				});
+			} else {
+				// Fallback for browsers without Font Loading API
+				setTimeout(() => {
+					document.documentElement.classList.add('fonts-loaded');
+				}, 100);
+			}
+		</script>
 	</body>
 </html>

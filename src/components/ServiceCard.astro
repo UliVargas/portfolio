@@ -1,5 +1,7 @@
 ---
 // ServiceCard component
+import { Icon } from 'astro-icon/components';
+
 interface Props {
 	icon: string;
 	title: string;
@@ -11,7 +13,7 @@ const { icon, title, description, bgColor = 'bg-primary' } = Astro.props;
 ---
 
 <div
-	class="bg-white dark:bg-surface-dark p-6 sm:p-8 rounded-2xl border-2 border-black dark:border-white shadow-neobrutalism hover:shadow-neobrutalism-hover hover:translate-x-0.5 hover:translate-y-0.5 transition-all group relative overflow-hidden"
+	class="bg-white dark:bg-surface-dark p-6 sm:p-8 rounded-2xl border-2 border-black dark:border-white shadow-neobrutalism md:hover:shadow-neobrutalism-hover md:hover:translate-x-0.5 md:hover:translate-y-0.5 transition-all group relative overflow-hidden"
 >
 	<!-- Decorative Corner -->
 	<div
@@ -21,9 +23,9 @@ const { icon, title, description, bgColor = 'bg-primary' } = Astro.props;
 
 	<!-- Icon -->
 	<div
-		class={`w-12 h-12 ${bgColor} rounded-lg border-2 border-black mb-6 flex items-center justify-center group-hover:rotate-6 transition-transform relative z-10`}
+		class={`w-12 h-12 ${bgColor} rounded-lg border-2 border-black mb-6 flex items-center justify-center md:group-hover:rotate-6 transition-transform relative z-10`}
 	>
-		<span class="material-symbols-outlined text-white">{icon}</span>
+		<Icon name={`material-symbols:${icon}`} class="text-white w-6 h-6" />
 	</div>
 
 	<!-- Title -->
