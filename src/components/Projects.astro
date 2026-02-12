@@ -3,7 +3,7 @@
 import ProjectCard from './ProjectCard.astro';
 ---
 
-<section id="projects" class="px-6 pb-20 md:px-16 md:pb-24 relative z-10">
+<section id="projects" class="px-3 sm:px-6 pb-16 md:px-16 md:pb-24 relative z-10">
     <!-- Blueprint Grid Background -->
     <div class="absolute inset-0 z-0 bg-blueprint-grid opacity-30 pointer-events-none"></div>
     
@@ -18,9 +18,9 @@ import ProjectCard from './ProjectCard.astro';
     <!-- Projects Container -->
     <div class="flex flex-col gap-16 md:gap-24 max-w-5xl mx-auto">
         <!-- Project 1: FinTech -->
-        <ProjectCard 
+        <!-- <ProjectCard 
             title="ClaroPay: Ecosistema Financiero"
-            description="Event-driven architecture with RabbitMQ and NestJS. Diseñado para manejar millones de transacciones con baja latencia."
+            description="Arquitectura basada en eventos con RabbitMQ y NestJS. Diseñado para manejar millones de transacciones con baja latencia."
             category="FinTech"
             categoryColor="bg-primary"
             accentColor="bg-accent-light-blue dark:bg-slate-800"
@@ -30,11 +30,11 @@ import ProjectCard from './ProjectCard.astro';
                 { icon: 'database', name: 'PG', color: 'text-blue-400' }
             ]}
             reversed={false}
-        />
+        /> -->
         
         <!-- Project 2: E-Commerce -->
-        <ProjectCard 
-            title="E-commerce Scalable Architecture"
+        <!-- <ProjectCard 
+            title="Arquitectura Escalable E-commerce"
             description="Migración a microservicios con 99.9% de disponibilidad. Sistema distribuido para alto tráfico en temporada alta."
             category="E-Commerce"
             categoryColor="bg-accent-orange"
@@ -44,7 +44,23 @@ import ProjectCard from './ProjectCard.astro';
                 { icon: 'deployed_code', name: 'Docker', color: 'text-blue-500' },
                 { icon: 'memory', name: 'Redis', color: 'text-red-500' }
             ]}
+            ]}
             reversed={true}
+        /> -->
+        
+        <!-- Project 3: En Construcción -->
+        <ProjectCard 
+            title="Próximos Proyectos"
+            description="Nuevos desarrollos en camino. Actualmente trabajando en soluciones innovadoras con las últimas tecnologías del ecosistema web moderno."
+            category="En Construcción"
+            categoryColor="bg-accent-grey"
+            accentColor="bg-gray-100 dark:bg-gray-800"
+            technologies={[
+                { icon: 'construction', name: 'WIP', color: 'text-yellow-600' },
+                { icon: 'rocket_launch', name: 'Pronto', color: 'text-purple-600' },
+                { icon: 'auto_awesome', name: 'Nuevo', color: 'text-pink-500' }
+            ]}
+            reversed={false}
         />
     </div>
 </section>
