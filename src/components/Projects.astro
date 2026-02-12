@@ -1,0 +1,50 @@
+---
+// Projects section
+import ProjectCard from './ProjectCard.astro';
+---
+
+<section id="projects" class="px-6 pb-20 md:px-16 md:pb-24 relative z-10">
+    <!-- Blueprint Grid Background -->
+    <div class="absolute inset-0 z-0 bg-blueprint-grid opacity-30 pointer-events-none"></div>
+    
+    <!-- Section Title -->
+    <div class="flex justify-center items-center mb-16 relative">
+        <h2 class="text-4xl font-display font-black text-center z-10 bg-background-light dark:bg-background-dark px-4 text-gray-900 dark:text-white border-2 border-transparent rounded-lg relative">
+            <span class="absolute -inset-1 border border-dashed border-primary/20 -z-10 rounded-lg"></span>
+            Proyectos
+        </h2>
+    </div>
+    
+    <!-- Projects Container -->
+    <div class="flex flex-col gap-16 md:gap-24 max-w-5xl mx-auto">
+        <!-- Project 1: FinTech -->
+        <ProjectCard 
+            title="ClaroPay: Ecosistema Financiero"
+            description="Event-driven architecture with RabbitMQ and NestJS. Diseñado para manejar millones de transacciones con baja latencia."
+            category="FinTech"
+            categoryColor="bg-primary"
+            accentColor="bg-accent-light-blue dark:bg-slate-800"
+            technologies={[
+                { icon: 'code', name: 'TS', color: 'text-blue-600' },
+                { icon: 'dns', name: 'Node', color: 'text-green-600' },
+                { icon: 'database', name: 'PG', color: 'text-blue-400' }
+            ]}
+            reversed={false}
+        />
+        
+        <!-- Project 2: E-Commerce -->
+        <ProjectCard 
+            title="E-commerce Scalable Architecture"
+            description="Migración a microservicios con 99.9% de disponibilidad. Sistema distribuido para alto tráfico en temporada alta."
+            category="E-Commerce"
+            categoryColor="bg-accent-orange"
+            accentColor="bg-[#fae8d4] dark:bg-[#4a3f35]"
+            technologies={[
+                { icon: 'cloud_queue', name: 'AWS', color: 'text-orange-500' },
+                { icon: 'deployed_code', name: 'Docker', color: 'text-blue-500' },
+                { icon: 'memory', name: 'Redis', color: 'text-red-500' }
+            ]}
+            reversed={true}
+        />
+    </div>
+</section>

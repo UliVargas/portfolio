@@ -1,0 +1,41 @@
+---
+// Services section
+import ServiceCard from './ServiceCard.astro';
+---
+
+<section id="services" class="px-6 pb-20 md:px-16 md:pb-24 relative z-10">
+    <!-- Section Title -->
+    <div class="flex justify-center items-center mb-12 relative">
+        <h2 class="text-4xl font-display font-black text-center z-10 bg-background-light dark:bg-background-dark px-4 text-gray-900 dark:text-white border-2 border-transparent rounded-lg relative">
+            <span class="absolute -inset-1 border border-dashed border-primary/20 -z-10 rounded-lg"></span>
+            Servicios
+        </h2>
+        <svg class="absolute -top-6 right-1/2 translate-x-16 w-12 h-12 text-primary dark:text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" stroke="currentColor" stroke-width="1"></path>
+        </svg>
+    </div>
+    
+    <!-- Service Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <ServiceCard 
+            icon="code"
+            title="Web Development"
+            description="Desarrollo de sitios web y aplicaciones web a medida. Interfaces modernas, responsivas y accesibles utilizando las últimas tecnologías del mercado."
+            bgColor="bg-primary"
+        />
+        
+        <ServiceCard 
+            icon="dns"
+            title="API Architecture"
+            description="Diseño y construcción de APIs RESTful y GraphQL escalables. Optimización de bases de datos y seguridad en el backend."
+            bgColor="bg-accent-grey"
+        />
+        
+        <ServiceCard 
+            icon="terminal"
+            title="Tech Consulting"
+            description="Asesoría técnica para startups y empresas. Elección de stack tecnológico, revisión de código y mentoría de equipos."
+            bgColor="bg-accent-blue"
+        />
+    </div>
+</section>

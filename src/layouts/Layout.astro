@@ -1,23 +1,54 @@
+---
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { 
+	title = 'Ulises Vargas Flores - Blueprint Engineering Portfolio', 
+	description = 'Portafolio de desarrollo full-stack con arquitecturas escalables' 
+} = Astro.props;
+
+import '../styles/global.css';
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<meta name="description" content={description} />
+		<title>{title}</title>
+		
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Work+Sans:wght@400;600;800&display=swap" rel="stylesheet" />
+		
+		<!-- Material Symbols -->
+		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
 	</head>
-	<body>
-		<slot />
+	<body class="bg-background-light dark:bg-background-dark text-black dark:text-white font-body transition-colors duration-300 min-h-screen flex flex-col items-center p-4 sm:p-8">
+		<div class="w-full max-w-7xl mx-auto bg-background-light dark:bg-background-dark border-3 border-black dark:border-white rounded-3xl relative overflow-hidden shadow-neobrutalism dark:shadow-neobrutalism-dark min-h-[90vh]">
+			<!-- Blueprint Overlay -->
+			<div class="blueprint-overlay"></div>
+			
+			<!-- Blueprint Schema -->
+			<div class="blueprint-schema">
+				<div class="schema-line" style="top: 15%; left: 10%; width: 300px; height: 200px; border-right: none;"></div>
+				<div class="schema-line" style="top: 40%; left: 5%; width: 150px; height: 150px; border-radius: 50%;"></div>
+				<div class="schema-line" style="bottom: 20%; right: 15%; width: 400px; height: 250px; border-top: none;"></div>
+				<div class="schema-line" style="top: 25%; left: 30%; width: 40%; height: 1px; border-bottom: 1px dashed rgba(0, 71, 171, 0.15); border-top: none; border-left: none; border-right: none;"></div>
+				<div class="schema-node" style="top: 15%; left: 10%;"></div>
+				<div class="schema-node" style="top: 15%; left: 25%;"></div>
+				<div class="schema-node" style="top: 25%; left: 70%;"></div>
+				<div class="schema-node" style="bottom: 20%; right: 15%;"></div>
+				<div class="absolute top-[24%] left-[50%] w-0 h-0 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-b-[8px] border-b-[rgba(0,71,171,0.15)] rotate-90"></div>
+			</div>
+			
+			<slot />
+		</div>
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
