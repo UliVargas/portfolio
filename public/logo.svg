@@ -1,0 +1,64 @@
+<svg width="492" height="255" viewBox="0 0 492 255" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_d_123_2)">
+<mask id="path-1-inside-1_123_2" fill="white">
+<rect width="488" height="251" rx="12"/>
+</mask>
+<rect width="488" height="251" rx="12" fill="#151C2B" shape-rendering="crispEdges"/>
+<rect width="488" height="251" rx="12" stroke="#1E293B" stroke-width="8" shape-rendering="crispEdges" mask="url(#path-1-inside-1_123_2)"/>
+<g filter="url(#filter1_dd_123_2)">
+<g clip-path="url(#clip0_123_2)">
+<path d="M37 86L76 131L37 176" stroke="#0D59F2" stroke-width="8" stroke-linecap="square"/>
+</g>
+</g>
+<rect x="433" y="71" width="24" height="120" fill="#0D59F2"/>
+<rect x="127" y="71" width="24" height="120" fill="white"/>
+<rect x="187" y="71" width="24" height="120" fill="white"/>
+<rect x="127" y="161" width="24" height="6" fill="#151C2B"/>
+<rect x="127" y="167" width="84" height="24" fill="white"/>
+<rect width="16" height="80" transform="matrix(1.5 0 0.318835 1.5 209.488 71)" fill="white"/>
+<rect width="16" height="80" transform="matrix(1.5 0 -0.318835 1.5 308.512 71)" fill="white"/>
+<rect width="15.9968" height="4.00139" transform="matrix(1.40093 0.311868 -0.623736 1.46722 299.711 116.57)" fill="#151C2B"/>
+<rect x="331" y="71" width="24" height="120" fill="white"/>
+<rect x="331" y="71" width="72" height="24" fill="white"/>
+<rect width="40" height="16" transform="matrix(1.5 0 0 1.5 331 119)" fill="white"/>
+<rect x="373" y="119" width="6" height="24" fill="#151C2B"/>
+<rect x="16.5" y="16.5" width="7" height="7" rx="3.5" stroke="#94A3B8"/>
+<rect x="18.9375" y="18.2324" width="4" height="1" transform="rotate(45 18.9375 18.2324)" fill="#94A3B8"/>
+<rect x="464.5" y="16.5" width="7" height="7" rx="3.5" stroke="#94A3B8"/>
+<rect x="466.938" y="18.2324" width="4" height="1" transform="rotate(45 466.938 18.2324)" fill="#94A3B8"/>
+<rect x="16.5" y="227.5" width="7" height="7" rx="3.5" stroke="#94A3B8"/>
+<rect x="18.9375" y="229.232" width="4" height="1" transform="rotate(45 18.9375 229.232)" fill="#94A3B8"/>
+<rect x="464.5" y="227.5" width="7" height="7" rx="3.5" stroke="#94A3B8"/>
+<rect x="466.938" y="229.232" width="4" height="1" transform="rotate(45 466.938 229.232)" fill="#94A3B8"/>
+</g>
+<defs>
+<filter id="filter0_d_123_2" x="0" y="0" width="492" height="255" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dx="4" dy="4"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_123_2"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_123_2" result="shape"/>
+</filter>
+<filter id="filter1_dd_123_2" x="23" y="71" width="76" height="138" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="10"/>
+<feGaussianBlur stdDeviation="4"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_123_2"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="1.5"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+<feBlend mode="normal" in2="effect1_dropShadow_123_2" result="effect2_dropShadow_123_2"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_123_2" result="shape"/>
+</filter>
+<clipPath id="clip0_123_2">
+<rect width="40" height="80" fill="white" transform="matrix(1.5 0 0 1.5 31 71)"/>
+</clipPath>
+</defs>
+</svg>
