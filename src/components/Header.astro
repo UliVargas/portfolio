@@ -2,54 +2,87 @@
 // Header component con navegación y dark mode
 ---
 
-<nav class="flex items-center justify-between px-3 sm:px-6 py-4 md:px-10 md:py-5 border-b-3 border-black dark:border-white relative z-20 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
-    <a href="/">
-        <img src="/logo.svg" alt="UVF Logo" class="h-16 w-auto rounded-lg" />
-    </a>
-    
-    <div class="hidden md:flex items-center space-x-8">
-        <a href="#about" class="font-bold hover:underline decoration-2 underline-offset-4 decoration-primary dark:decoration-primary text-gray-800 dark:text-gray-200">
-            Sobre mí
-        </a>
-        <a href="#services" class="font-bold hover:underline decoration-2 underline-offset-4 decoration-primary dark:decoration-primary text-gray-800 dark:text-gray-200">
-            Servicios
-        </a>
-        <a href="#projects" class="font-bold hover:underline decoration-2 underline-offset-4 decoration-primary dark:decoration-primary text-gray-800 dark:text-gray-200">
-            Proyectos
-        </a>
-    </div>
-    
-    <div class="flex items-center gap-4">
-        <button 
-            id="theme-toggle"
-            aria-label="Cambiar modo oscuro" 
-            class="p-2 border-2 border-black dark:border-white rounded-full hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
-        >
-            <span class="material-symbols-outlined text-lg">dark_mode</span>
-        </button>
-        <a 
-            href="#" 
-            class="bg-primary hover:bg-primary-hover text-white font-bold py-2 px-6 rounded-lg border-2 border-black dark:border-white shadow-neobrutalism hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-neobrutalism-hover transition-all"
-        >
-            Descargar CV
-        </a>
-    </div>
+<nav
+	class="flex items-center justify-between px-3 sm:px-6 py-4 md:px-10 md:py-5 border-b-3 border-black dark:border-white relative z-20 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm"
+>
+	<a href="/">
+		<img src="/logo.svg" alt="UVF Logo" class="h-16 w-auto rounded-lg" />
+	</a>
+
+	<div class="hidden md:flex items-center space-x-8">
+		<a
+			href="#about"
+			class="font-bold hover:underline decoration-2 underline-offset-4 decoration-primary dark:decoration-primary text-gray-800 dark:text-gray-200"
+		>
+			Sobre mí
+		</a>
+		<a
+			href="#services"
+			class="font-bold hover:underline decoration-2 underline-offset-4 decoration-primary dark:decoration-primary text-gray-800 dark:text-gray-200"
+		>
+			Servicios
+		</a>
+		<a
+			href="#projects"
+			class="font-bold hover:underline decoration-2 underline-offset-4 decoration-primary dark:decoration-primary text-gray-800 dark:text-gray-200"
+		>
+			Proyectos
+		</a>
+	</div>
+
+	<div class="flex items-center gap-4">
+		<button
+			id="theme-toggle"
+			aria-label="Cambiar modo oscuro"
+			class="p-2 border-2 border-black dark:border-white rounded-full hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
+		>
+			<span id="theme-icon" class="material-symbols-outlined text-lg">dark_mode</span>
+		</button>
+		<a
+			href="mailto:hello@ulises.dev"
+			class="bg-primary hover:bg-primary-hover text-white font-bold py-2 px-6 rounded-lg border-2 border-black dark:border-white shadow-neobrutalism hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-neobrutalism-hover transition-all"
+		>
+			Contáctame
+		</a>
+	</div>
 </nav>
 
 <script>
-    // Dark mode toggle
-    const themeToggle = document.getElementById('theme-toggle');
-    
-    themeToggle?.addEventListener('click', () => {
-        document.documentElement.classList.toggle('dark');
-        localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
-    });
-    
-    // Check for saved theme preference or prefer-color-scheme
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-        document.documentElement.classList.add('dark');
-    }
+	// Dark mode toggle
+	const themeToggle = document.getElementById('theme-toggle');
+	const themeIcon = document.getElementById('theme-icon');
+
+	const updateThemeIcon = (isDark: boolean) => {
+		if (themeIcon) {
+			themeIcon.textContent = isDark ? 'light_mode' : 'dark_mode';
+		}
+	};
+
+	themeToggle?.addEventListener('click', () => {
+		const isDark = document.documentElement.classList.toggle('dark');
+		try {
+			localStorage.setItem('theme', isDark ? 'dark' : 'light');
+		} catch (e) {
+			console.warn('No se pudo guardar la preferencia de tema:', e);
+		}
+		updateThemeIcon(isDark);
+	});
+
+	// Check for saved theme preference or prefer-color-scheme
+	const initTheme = () => {
+		try {
+			const savedTheme = localStorage.getItem('theme');
+			const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+			const isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+
+			if (isDark) {
+				document.documentElement.classList.add('dark');
+			}
+			updateThemeIcon(isDark);
+		} catch (e) {
+			console.warn('No se pudo cargar la preferencia de tema:', e);
+		}
+	};
+
+	initTheme();
 </script>

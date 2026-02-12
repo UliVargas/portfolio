@@ -1,46 +1,82 @@
-# Astro Starter Kit: Basics
+# 🚀 Portfolio - Ulises Vargas Flores
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+Portfolio personal desarrollado con Astro, TailwindCSS y diseño neobrutalism. Optimizado para rendimiento, accesibilidad y SEO.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## ✨ Características
 
-## 🚀 Project Structure
+- 🎨 Diseño neobrutalism moderno con elementos blueprint
+- 🌓 Modo oscuro con persistencia y detección automática
+- ♿ Accesibilidad mejorada (aria-labels, navegación por teclado)
+- 📱 Diseño responsive y mobile-first
+- ⚡ Optimizado para rendimiento y SEO
+- 🔍 Meta tags Open Graph y Twitter Cards
+- 📊 Tipografía optimizada con font-display: swap
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🛠️ Tecnologías
 
-```text
+- [Astro](https://astro.build) - Framework web moderno
+- [TailwindCSS v4](https://tailwindcss.com) - Estilos utility-first
+- [TypeScript](https://www.typescriptlang.org/) - Tipado estático
+- Google Fonts (Space Grotesk & Work Sans)
+- Material Symbols - Iconografía
+
+## 📁 Estructura del Proyecto
+
+\`\`\`text
 /
 ├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
+│   ├── favicon.svg
+│   ├── logo.svg
+│   └── og-image.jpg          # TODO: Agregar imagen para Open Graph
+├── src/
+│   ├── components/
+│   │   ├── Footer.astro
+│   │   ├── Header.astro
+│   │   ├── Hero.astro
+│   │   ├── ProjectCard.astro
+│   │   ├── Projects.astro
+│   │   ├── ServiceCard.astro
+│   │   └── Services.astro
+│   ├── layouts/
+│   │   └── Layout.astro
+│   ├── pages/
+│   │   └── index.astro
+│   └── styles/
+│       └── global.css
+├── .eslintrc.json
+├── .prettierrc.json
+├── astro.config.mjs
 └── package.json
-```
+\`\`\`
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 🧞 Comandos
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
+| Comando | Acción |
 | :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+| \`pnpm install\` | Instala las dependencias |
+| \`pnpm dev\` | Inicia servidor de desarrollo en \`localhost:4321\` |
+| \`pnpm dev:host\` | Inicia servidor accesible en red local |
+| \`pnpm build\` | Construye el sitio para producción |
+| \`pnpm lint\` | Ejecuta ESLint para detectar errores |
+| \`pnpm lint:fix\` | Corrige automáticamente errores de ESLint |
+| \`pnpm format\` | Formatea el código con Prettier |
 
-## 👀 Want to learn more?
+## 📈 Mejoras Implementadas
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### Críticas ✅
+- ✅ Eliminado código comentado
+- ✅ Botón de tema oscuro con ícono dinámico
+- ✅ Aria-labels en todos los enlaces interactivos
+- ✅ Estilos inline movidos a clases CSS reutilizables
+- ✅ Manejo robusto de errores en localStorage
+
+### Importantes ✅
+- ✅ Meta tags SEO completos (Open Graph + Twitter Cards)
+- ✅ Optimización de carga de fuentes (display=swap)
+- ✅ ESLint y Prettier configurados
+- ✅ Enlaces funcionales con seguridad (rel="noopener")
+- ✅ Consolidación de clases CSS repetidas
+
+## 📝 Licencia
+
+© 2026 Ulises Vargas Flores
